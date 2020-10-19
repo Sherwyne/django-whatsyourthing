@@ -1,0 +1,10 @@
+{% load static %}
+
+{% block content %}
+<form action="" method="POST" target="_top" id="email-registration-form">
+    {% csrf_token %}
+    {{form}}
+
+    <button type="submit" class="btn btn-success btn-lg js-register-btn">Update</button>
+</form>
+{% endblock content %}

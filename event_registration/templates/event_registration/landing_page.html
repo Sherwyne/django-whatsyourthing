@@ -1,0 +1,100 @@
+{% extends 'event_registration/main.html' %}
+{% block content %}
+<body class="animate-page" data-spy="scroll" data-target="#navbar" data-offset="100">
+    <!--Preloader div-->
+    <div class="preloader"></div>
+    <section class="message">
+        <div class="alert-custom alert-info text-center" role="alert">
+            <h4 class="alert-heading ">Welcome!</h4>
+            <p>Nice to have you here! Welcome to ING pay virtual launch! <a href="#" class="alert-link"
+                    data-toggle="modal" data-target="#email-register">SIGN UP NOW</a> and get ready to do your thing
+                with ING!
+            <p>
+        </div>
+    </section>
+
+    <header id="top" class="header">
+        <button id="register-btn" class="btn btn-default btn-xl wow zoomIn btn-position" type="button" name="button"
+            data-wow-delay="0.3s">REGISTER NOW</button>
+    </header>
+    <!-- end .header -->
+    <!-- Highlight Section -->
+    <section class="highlight">
+        <div class="container">
+            <div class="countdown_wrap">
+                <h3 class="countdown_title text-center white">EVENT WILL START IN <b>NOVEMBER 9, 2020</b></h6>
+                    <!-- Countdown JS for the Event Date Starts here.
+    TIP: You can change your event time below in the Same Format.  -->
+                    <ul id="countdown" data-event-date="9 november 2020 08:00:00">
+                        <li class="wow zoomIn" data-wow-delay="0s"> <span class="days">00</span>
+                            <p class="timeRefDays">days</p>
+                        </li>
+                        <li class="wow zoomIn" data-wow-delay="0.2s"> <span class="hours">00</span>
+                            <p class="timeRefHours">hours</p>
+                        </li>
+                        <li class="wow zoomIn" data-wow-delay="0.4s"> <span class="minutes">00</span>
+                            <p class="timeRefMinutes">minutes</p>
+                        </li>
+                        <li class="wow zoomIn" data-wow-delay="0.6s"> <span class="seconds">00</span>
+                            <p class="timeRefSeconds">seconds</p>
+                        </li>
+                    </ul>
+            </div>
+            <!-- end .countdown_wrap -->
+            <div class="text-center">
+                <!-- Add to Calendar Plugin. 
+                     For Customization, Visit https://addtocalendar.com/ -->
+                <span class="addtocalendar atc-style-theme">
+                    <a class="atcb-link"><i class="fa fa-calendar"> </i> Add to My Calendar</a>
+                    <var class="atc_event">
+                        <var class="atc_date_start">2020-11-09 00:00:00</var>
+                        <var class="atc_date_end">2020-11-09 24:00:00</var>
+                        <var class="atc_timezone">Philippines</var>
+                        <var class="atc_title">What's Your Thing | ING Event</var>
+                        <var class="atc_description">What's your thing is an event from ING</var>
+                        <var class="atc_organizer">ING</var>
+                        <var class="atc_organizer_email"></var>
+                    </var>
+                </span>
+            </div>
+        </div>
+        <!-- end .container -->
+    </section>
+    <!-- end section.highlight -->
+    <!-- 
+     Footer Call to Action
+     ====================================== -->
+    <section class="footer-action">
+        <div class="container">
+            <h2 class="headline wow fadeInDown" data-wow-delay="0.1s">JOIN THE EVENT</h2>
+            <button id="register-btn2" class="btn btn-success btn-xl wow zoomIn" data-wow-delay="0.3s">REGISTER NOW</button>
+        </div>
+    </section>
+
+    {% include 'event_registration/footer.html' %}
+    <div class="modal fade" tabindex="-1" role="dialog" id="modal">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content"></div>
+    </div>
+  </div>
+  
+{% endblock content %}
+
+{% block extrascripts %}
+<script type="text/javascript">
+    $(function () {
+        // Sign up button
+        $("#register-btn").modalForm({
+            formURL: "{% url 'register' %}"
+        });
+    });
+    $(function () {
+        // Sign up button2
+        $("#register-btn2").modalForm({
+            formURL: "{% url 'register' %}"
+        });
+    });
+</script>
+{% endblock extrascripts %}
+
+

@@ -1,0 +1,52 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>What's Your Thing | ING</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static '/css/bootstrap.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/event.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/themes/red.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/plugins/animate.css' %}" />
+    
+</head>
+
+<body>
+    {% block content %}
+
+    {% endblock content %}
+    <!-- end section.footer-action -->
+</body>
+<!-- 
+     Javascripts : Nerd Stuff :)
+     ====================================== -->
+<!-- jQuery Library -->
+{% block scripts %}
+<script src="{% static '/js/jquery.min.js' %}"></script>
+<!-- Bootstrap JS -->
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<!-- 3rd party Plugins -->
+<script src="{% static 'js/plugins/countdown.js' %}"></script>
+<script src="{% static 'js/plugins/wow.js' %}"></script>
+<script src="{% static 'js/plugins/slick.js' %}"></script>
+<script src="{% static 'js/plugins/magnific-popup.js' %}"></script>
+<script src="{% static 'js/plugins/validate.js' %}"></script>
+<script src="{% static 'js/plugins/appear.js' %}"></script>
+<script src="{% static 'js/plugins/count-to.js' %}"></script>
+<script src="{% static 'js/plugins/nicescroll.js' %}"></script>
+<script src="{% static 'js/includes/register.js' %}"></script>
+<script src="{% static 'js/jquery.bootstrap.modal.forms.js' %}"></script>
+<script src="{% static 'js/jquery.bootstrap.modal.forms.min.js' %}"></script>
+
+<!-- Main Script -->
+<script src="{% static 'js/main.js' %}"></script>
+{% endblock scripts  %}
+
+{% block extrascripts %}{% endblock extrascripts %}
+</html>

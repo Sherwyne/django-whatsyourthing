@@ -1,0 +1,48 @@
+<!-- 
+         Registration Popup (EMAIL)
+         ====================================== -->
+{% load widget_tweaks %}
+
+<form method="post" action="">
+    {% csrf_token %}
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title text-center" id="register-now-label">Event Registration
+        </h4>
+    </div>
+    <div class="modal-body">
+        <div class="{% if form.non_field_errors %}invalid{% endif %} mb-2">
+            {% for error in form.non_field_errors %}
+            {{ error }}
+            {% endfor %}
+        </div>
+
+        {% for field in form %}
+        <div class="form-group">
+            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+            {% render_field field class="form-control" placeholder=field.label %}
+            <div class="{% if field.errors %} invalid{% endif %}">
+                {% for error in field.errors %}
+                <p class="help-block">{{ error }}</p>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+        <div class="form-group">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="agree" required> I agree to the <a href="terms.html">Terms</a> and <a
+                        href="privacy.html">Privacy
+                        Policy</a>
+                </label>
+            </div>
+        </div>
+        <div class="text-center top-space">
+            <button type="submit" id="register-btn" class="btn btn-success btn-lg js-register-btn">Register</button>
+            <div id="js-register-result" data-success-msg="Form submitted successfully."
+                data-error-msg="Oops. Something went wrong."></div>
+
+
+</form>
